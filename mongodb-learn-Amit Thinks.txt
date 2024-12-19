@@ -1,7 +1,72 @@
 20241219
 
-https://youtu.be/cZ79avoq9UU?si=L_yBuAQZo-0eF5FW
+learn from brocode youtube channel
+
+
 
 document based
 non relational databse
 
+
+
+db.createCollection("Employee");
+db.Student.find();
+
+db.Student.insertOne({
+name:"akhildornala",
+age:29,
+gpa:4,
+fullTime:true,
+registeredDate: new Date(),
+graduationDate: null,
+courses: ["java","react","javascript","mongo"],
+address: {street:"road no4",
+city:"hyderabad",
+zip:"500035"
+}
+});
+
+sort by order
+db.Student.find().sort({name:1})
+db.Student.find().sort({name:-1})
+
+
+find student with high gpa
+db.Student.find().sort({gpa:-1});
+
+find student with low gpa
+db.Student.find().sort({gpa:1});
+
+
+
+two conditions
+db.Student.find({gpa:4, fullTime:true});
+
+
+projections in mongo will filter with fields that will return
+db.Student.find({},{name:true});
+output:
+{
+  _id: ObjectId('6763bf65ab39425e37a63bc3'),
+  name: 'Aashrit'
+},
+{
+  _id: ObjectId('6763bf77ab39425e37a63bc4'),
+  name: 'Dhriti'
+}
+
+
+db.Student.find({gpa:4},{_id:false, name:true});
+
+db.Student.updateOne(filter, update);
+
+db.Student.updateOne({name:"akhildornala"},{$set:{age:30}});
+
+unset operator
+
+db.Student.updateMany({},{$unset:{age:null}});
+
+db.Student.updateMany({},{$unset:{age:null}});
+
+
+db.Student.deleteOne({registeredDate:{$exists:false}});
