@@ -1,7 +1,7 @@
 20241219
 
 learn from brocode youtube channel
-
+https://www.youtube.com/watch?v=c2M-rlkkT5o
 
 
 document based
@@ -70,3 +70,42 @@ db.Student.updateMany({},{$unset:{age:null}});
 
 
 db.Student.deleteOne({registeredDate:{$exists:false}});
+
+operators
+db.Student.find({name:{$ne:"akhildornala"}},{name:true});
+db.Student.find({name:{$ne:"akhildornala"}},{name:true});
+db.Student.find({gpa:{$gt:3}},{name:true});
+db.Student.find({gpa:{$gt:3}},{name:true, gpa:true});
+db.Student.find({gpa:{$gt:3.5}},{name:true, gpa:true});
+db.Student.find({gpa:{$gte:3.5}},{name:true,gpa:true});
+db.Student.find({gpa:{$lte:3.5}},{name:true,gpa:true});
+db.Student.find({gpa:{$lt:3.5}},{name:true,gpa:true});
+
+and condition
+db.Student.find({gpa:{$gte:3}, gpa:{$lte:4}},{name:true, gpa:true});
+
+or operation
+db.Student.find({name:{$in:["akhildornala","Taradornala","Aarav",]}},{name:true, age:true});
+
+
+and  operation
+db.Student.find({$and:[{fullTime:true},{age:{$lte:22}}]}, {name:true, age:true});
+db.Student.find({$and:[{gpa:{$gte:3}},{gpa:{$lte:4}}]},{name:true,gpa:true});
+
+db.Student.find({$or:[{fullTime:true},{gpa:{$gte:4}}]},{name:true, age:true, gpa:true, fullTime:true});
+----nor , both should be false
+db.Student.find({$nor:[{fullTime:true},{gpa:{$gte:4}}]},{name:true, age:true, gpa:true, fullTime:true});
+
+db.Student.find({name:"akhildornala"}).explain("executionStats");
+totalDocsExamined:;8
+
+
+db.Student.createIndex({name:1});
+totalDocsExamined: 1,
+
+after creating index on field name, execution stats showing that, total document examined to find records
+are 1
+
+
+
+
