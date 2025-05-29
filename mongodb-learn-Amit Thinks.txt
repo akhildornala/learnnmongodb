@@ -39,6 +39,7 @@ db.Student.find().sort({gpa:1});
 
 
 
+
 two conditions
 db.Student.find({gpa:4, fullTime:true});
 
