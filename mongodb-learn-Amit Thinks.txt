@@ -26,6 +26,7 @@ zip:"500035"
 }
 });
 
+
 sort by order
 db.Student.find().sort({name:1})
 db.Student.find().sort({name:-1})
