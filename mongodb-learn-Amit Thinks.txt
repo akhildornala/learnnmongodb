@@ -8,7 +8,6 @@ document based
 non relational databse
 
 
-
 db.createCollection("Employee");
 db.Student.find();
 
