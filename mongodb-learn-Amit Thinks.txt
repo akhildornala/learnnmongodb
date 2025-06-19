@@ -3,7 +3,6 @@
 learn from brocode youtube channel
 https://www.youtube.com/watch?v=c2M-rlkkT5o
 
-
 document based
 non relational databse
 
