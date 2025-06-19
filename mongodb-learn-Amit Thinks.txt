@@ -7,7 +7,6 @@ https://www.youtube.com/watch?v=c2M-rlkkT5o
 document based
 non relational databse
 
-
 db.createCollection("Employee");
 db.Student.find();
 
