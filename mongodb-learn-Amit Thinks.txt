@@ -9,6 +9,7 @@ non relational databse
 db.createCollection("Employee");
 db.Student.find();
 
+
 db.Student.insertOne({
 name:"akhildornala",
 age:29,
